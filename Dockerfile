@@ -7,7 +7,7 @@ COPY . .
 RUN go build -o main cmd/main.go
 
 # Final Run Stage
-FROM alpine:latest
+FROM golang:1.25-alpine
 WORKDIR /root/
 COPY --from=builder /app/main .
 # We don't copy .env because we will set variables in Render's dashboard
