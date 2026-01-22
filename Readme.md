@@ -59,6 +59,18 @@ Value - <PASTE_TOKEN_HERE>
 Step A: Check immediately; status will be "pending".
 Step B: Wait 2 minutes, then send the request again. Status will be "completed".
 ```
+### 5. Delete a Task
+```
+Method: DELETE
+URL: https://task-manager-lhmq.onrender.com/tasks/:id
+Header:
+Key - Authorization
+Value - <PASTE_TOKEN_HERE>
+
+1. First, run your `GET /tasks` request to find an existing Task ID
+2. Replace :id in the URL with that number.
+3. Click Send
+'''
 ## Core Logic: How the Worker Works
 - This project uses Channels to communicate between the API and the background worker to ensure no tasks are missed.
 - The Producer: When /tasks is called, the TaskController saves the task to DB and sends the Task ID into a global TaskChannel.
