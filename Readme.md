@@ -70,7 +70,8 @@ Value - <PASTE_TOKEN_HERE>
 1. First, run your `GET /tasks` request to find an existing Task ID
 2. Replace :id in the URL with that number.
 3. Click Send
-'''
+```
+
 ## Core Logic: How the Worker Works
 - This project uses Channels to communicate between the API and the background worker to ensure no tasks are missed.
 - The Producer: When /tasks is called, the TaskController saves the task to DB and sends the Task ID into a global TaskChannel.
